@@ -8,7 +8,7 @@ webpackJsonp([3],{
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:50
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-10 17:07:18
+* @Last Modified time: 2017-11-15 17:18:06
 */
 
 
@@ -23,6 +23,7 @@ var confirmPg={
 	 		var _this=this;
 	 		$(".confirmPg .QRImg>img.img").attr('src',img);
 	 		_this.bindEvent();
+	 		_this.pageMove();
 	},
 	bindEvent: function(){
 		var _this=this;
@@ -34,6 +35,11 @@ var confirmPg={
 		  elem.focus();
 	       elem.select();
 		document.execCommand("copy",true);
+	},
+	pageMove: function(){
+		$(".confirmPg>.notice>div>a.link").click(function(){
+			window.location.href='./transaction.html';
+		});
 	}
 };
 

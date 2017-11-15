@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-09-03 09:02:47
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-15 16:52:48
+* @Last Modified time: 2017-11-15 17:13:50
 */
 "use strict";
 
@@ -15,6 +15,7 @@ var header={
 		var _this=this;
 		_this.insertImg();
 		_this.bindEvent();
+		_this.pageMove();
 	},
 	insertImg: function(){
 		var img=require('../../../resource/img/logo.png');
@@ -55,6 +56,11 @@ var header={
 			console.log(textVal);
 			window.location.href='./list.html?keyword='+textVal;
 		}
+	},
+	pageMove: function(){
+		$("a.navbar-brand").click(function(){
+			window.location.href="./index.html";
+		});
 	}
 };
 
