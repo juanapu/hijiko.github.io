@@ -1,0 +1,278 @@
+/*
+* @Author: Administrator
+* @Date:   2017-08-20 19:40:23
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-15 15:50:36
+*  default css class style : className;
+*  bootstrap css style : class-name;
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: "Hiragino Sans GB","\534E\6587\7EC6\9ED1","STHeiti","\5FAE\8F6F\96C5\9ED1","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	background-color: rgb(246,246,246);
+}
+li{
+	list-style: none;
+}
+img{
+	display: block;
+	border: none;
+}
+label,input[type='checkbox'],a,button{
+	cursor: pointer;
+}
+ .col-lg-10, .col-md-10, .col-sm-10, .col-xs-10{
+ 	margin: auto;
+ }
+
+/*hide*/
+.hide{
+	display: none;
+}
+/***************hyperline css style******************/
+.link:before{
+	content: "    ";
+	position: absolute;
+	width: 0px;
+	top: 24px;
+    -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 1s;
+     -moz-transition: width 1s;
+     -o-transition: width 1s;
+}
+.link{
+	text-decoration: none;
+	cursor: pointer;
+	color: #2f92a9;
+	border: none;
+}
+.link:hover{
+	text-decoration: none;
+	color: rgb(161,208,255);
+}
+.link:hover:before{
+	color: rgb(161,208,255);
+	width: 20px;
+	text-decoration: none;
+	border-bottom:2px solid rgb(161,208,255);
+	width: 70px;
+}
+.link-text{
+	color: #999;
+	text-decoration: none;
+}
+
+/************************ loading ***************************/
+.load{
+	display: block;
+	background: url("https://media.giphy.com/media/26tPgy93ssTeTTSqA/giphy.gif") no-repeat;
+	background-position: center;
+	background-size: 100%;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	opacity: 0.6;
+	filter: alpha(opacity=60%);
+
+}
+
+.clear{
+	clear: both;
+}
+
+/*.cmnBtn{
+	border-radius: 5px;
+	border: none;
+	background-color: #2f92a9;
+	color: #fff;
+    padding: 0.4em 1em;
+}
+*/
+
+.cmnBtn {
+border-radius: 5px;
+  background:  #2f92a9;
+  color:#fff;
+  border: none;
+  box-shadow: 0px 2px 0 #0f2d33, 2px 4px 6px #b1e8f5;
+  font-weight: 900;
+  padding: 0.4em 1em;
+  transition: all 150ms linear;
+}
+.cmnBtn:hover {
+  background: rgb(50,122,129);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, .2);
+	color: #fff;
+  text-decoration: none;
+    text-shadow: -1px -1px 0 #327a81;
+  transition: all 250ms linear;
+}
+
+
+
+.cmnBtn.light{
+	background-color: rgba(47,146,169,0.5);
+}
+
+/****************************************for mobile ************************************************/
+ @media all and (max-width: 500px){
+	.cmnMblContainer{
+	    width: 80%;
+	    margin: auto;
+	    padding: 0px;
+	}
+}/*
+* @Author: Administrator
+* @Date:   2017-09-03 09:03:10
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-09 17:18:42
+*/
+
+
+/************************************common css****************************************************/
+.headerWrap,.headerWrap a  {
+    color: #fff;
+    
+}
+.headerWrap .navbar{
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.headerWrap nav.navbar{
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.headerWrap nav.navbar a.navbar-brand, .headerWrap .bar{
+    display: inline-block;
+    vertical-align: middle;
+    height: 67px;
+    line-height: 67px;
+}
+ .headerWrap nav.navbar .bar{
+    float: right;
+ }
+.headerWrap nav.navbar a{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
+/****************************************for tablet ************************************************/
+ @media all and (max-width: 800px){
+    .headerWrap .navbar{
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+ }
+
+/****************************************for PC ************************************************/
+@media all {
+      .headerWrap nav.navbar .bar.mobile{
+        display: none;
+      }    
+    .headerWrap .bar.pc ul.navbar-nav,.headerWrap .bar.pc ul.navbar-nav li {
+        display: inline-block!important;
+    }
+    .headerWrap>nav.navbar>a.navbar-brand>img{
+         height: 46px;
+        display: inline-block;
+    }
+    .headerWrap .bar.pc a.nav-link {
+        font-size: 1.4em;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .headerWrap .nav-link{
+        display: inline;
+    }
+    .headerWrap .bar.pc li.nav-item.active {
+        background-color: rgba(0,0,0,0.3);
+        text-align: center;
+    }
+}
+
+ 
+/****************************************for mobile ************************************************/
+ @media all and (max-width: 500px){
+  .headerWrap nav.navbar .bar.pc{
+        display: none;
+    }
+     .headerWrap nav.navbar .bar.mobile ul.navbar-nav{
+       display: none;
+    }
+  .headerWrap .bar.mobile>a>i.fa.fa-bars{
+        font-size: 26px;
+         vertical-align: middle;
+        vertical-align: -webkit-baseline-middle;
+    }
+    .headerWrap nav.navbar .bar.mobile{
+        display: inline-block;
+    }
+    .headerWrap .navbar{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .headerWrap .bar.mobile ul li{
+        line-height: 40px;
+    }
+    .headerWrap ul.navbar-nav {
+        position: absolute;
+        background-color: rgba(43,130,218,0.3);
+        width: 7em;
+        right: -5px;
+        text-align: right;
+        border-radius: 5px;
+    }
+    .headerWrap ul.navbar-nav li{
+        padding-right: 2em;
+    }
+    .headerWrap ul.navbar-nav li.active{
+         background-color: rgba(43,130,218,0.6);
+         border-radius: 5px;
+    }
+    .headerWrap a.showUl i {
+        color: rgba(255,255,255,0.3);
+    }
+
+}
+
+/****************************************for large screen ************************************************/
+@media all and (min-width: 1020px){
+ 
+
+ }
+ /*
+* @Author: Administrator
+* @Date:   2017-09-02 09:30:16
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-09-02 09:39:25
+*/
+
+.footer{
+	padding-bottom: 10px;
+}
+
+.footer .links{
+	text-align: center;
+	color: #666;
+	line-height: 30px;
+}
+
+.footer .links .link{
+	padding: 0 10px;
+}
+
+.footer .copyright{
+	text-align: center;
+	color: #666;
+	line-height: 30px;
+}

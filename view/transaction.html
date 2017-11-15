@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HiJiko首页</title>
+	  <meta charset="utf-8">
+	  <meta http-equiv="cache-control" content="no-cache"/>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../module/bootstrap/css/bootstrap.min.css">  
+	<link rel="stylesheet" type="text/css" href="../module/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../module/fontAwesome/css/font-awesome.min.css">
+	<script type="text/javascript" src="../module/tether/js/tether.min.js"></script>
+<link href="../page/common/common.css?6c4227244171f67ebb7d" rel="stylesheet"><link href="../page/transaction/transaction.css?6c4227244171f67ebb7d" rel="stylesheet"></head> 
+<body>
+		
+<div class="headerWrap"> 
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+	  <a class="navbar-brand" href="#">
+	  	<img src="xxxHTMLLINKxxx0.25273244070695890.79472949502909xxx" />
+	  </a>
+	  	<div class="bar pc">
+		  <ul class="navbar-nav">
+		    <li class="nav-item">
+		      <a class="nav-link jsRegister" href="#">注册</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link jsLogin" href="#">登录</a>
+		    </li>
+		 </ul>
+		</div>
+	 	<div class="bar mobile">
+		 	<a href=""><i class="fa fa-bars" aria-hidden="true"></i></a>
+			    <ul class="navbar-nav">
+				    <li class="nav-item">
+				      <a class="nav-link jsRegister" href="#">注册</a>
+				    </li>
+				    <li class="nav-item">
+				      <a class="nav-link jsLogin" href="#">登录</a>
+				    </li>
+			  </ul>
+		</div>
+	</nav>
+</div>  
+		<div class="transaction">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xl-10">
+					<p>欢迎使用 Hi,Jiko 交易托管服务<br>
+					请注意，Hi,Jiko 将在您选择时间内将交易款释放给收款方。若选择时间内未收到货物或交易未成功，请及时到用户中心-》交易管理-》暂停放款</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="innerForm col-lg-10 col-md-10 col-sm-10 col-xl-10">
+						<div class="descr">请输入金额和收款方账号</div>
+						<form>
+							<div class="form-item">
+								<label for="transName">交易名称:</label>
+								<input type="text" name="transName"></input>
+							</div>
+							<div class="form-item">
+								<label for="tranMont">*金额（￥）:</label>
+								<input type="number" required="" name="tranMont"></input>
+							</div>
+							<div class="form-item tranReceiver">
+								<label for="tranReceiver">*收款方支付宝账号:</label>
+								<input type="text" required="" name="tranReceiver"></input>
+							</div>
+							<div class="form-item range">
+								<label><span class="dateExpire">7</span>天后自动放款</label>
+								<div>
+								<input type="range" min="3" max="30" value="7" step="1"></input>
+								</div>
+							</div>
+							<div class="form-item">
+								<input class="cmnBtn jsGoConfirmPg" type="submit" value="下一步"></input>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div> 
+		</div>
+			<script src="../module/fastclick/fastclick.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../module/jqueryMobile/jquery.mobile.custom.js"></script>
+ 
+<script type="text/javascript" src="../page/common/index.js?6c4227244171f67ebb7d"></script><script type="text/javascript" src="../src/page/transaction.js?6c4227244171f67ebb7d"></script></body>

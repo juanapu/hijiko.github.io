@@ -1,0 +1,100 @@
+/*
+* @Author: Administrator
+* @Date:   2017-08-20 19:40:23
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-10 17:51:17
+*  default css class style : className;
+*  bootstrap css style : class-name;
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: "Hiragino Sans GB","\534E\6587\7EC6\9ED1","STHeiti","\5FAE\8F6F\96C5\9ED1","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	background-color: rgb(246,246,246);
+}
+li{
+	list-style: none;
+}
+img{
+	display: block;
+	border: none;
+}
+label,input[type='checkbox']{
+	cursor: pointer;
+}
+
+
+/*hide*/
+.hide{
+	display: none;
+}
+/***************hyperline css style******************/
+.link:before{
+	content: "    ";
+	position: absolute;
+	width: 0px;
+	top: 24px;
+    -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 1s;
+     -moz-transition: width 1s;
+     -o-transition: width 1s;
+}
+.link{
+	text-decoration: none;
+	cursor: pointer;
+	color: #2f92a9;
+	border: none;
+}
+.link:hover{
+	text-decoration: none;
+	color: rgb(161,208,255);
+}
+.link:hover:before{
+	color: rgb(161,208,255);
+	width: 20px;
+	text-decoration: none;
+	border-bottom:2px solid rgb(161,208,255);
+	width: 70px;
+}
+.link-text{
+	color: #999;
+	text-decoration: none;
+}
+
+/************************ loading ***************************/
+.load{
+	display: block;
+	background: url("https://media.giphy.com/media/26tPgy93ssTeTTSqA/giphy.gif") no-repeat;
+	background-position: center;
+	background-size: 100%;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	opacity: 0.6;
+	filter: alpha(opacity=60%);
+
+}
+
+.clear{
+	clear: both;
+}
+
+.cmnBtn{
+	border-radius: 5px;
+	border: none;
+	background-color: #2f92a9;
+	color: #fff;
+    padding: 5px 10px;
+}
+
+/****************************************for mobile ************************************************/
+ @media all and (max-width: 500px){
+	.cmnMblContainer{
+	    width: 80%;
+	    margin: auto;
+	    padding: 0px;
+	}
+}
