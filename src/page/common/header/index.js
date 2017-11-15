@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-09-03 09:02:47
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-15 16:50:49
+* @Last Modified time: 2017-11-15 16:52:48
 */
 "use strict";
 
@@ -17,7 +17,7 @@ var header={
 		_this.bindEvent();
 	},
 	insertImg: function(){
-		var img=require('../../resource/img/logo.png');
+		var img=require('../../../resource/img/logo.png');
 		$(".headerWrap>nav.navbar>a.navbar-brand>img").attr('src',img);
 	},
 	bindEvent: function(){
