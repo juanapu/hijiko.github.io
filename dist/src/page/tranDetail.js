@@ -1,4 +1,4 @@
-webpackJsonp([5],{
+webpackJsonp([1],{
 
 /***/ 32:
 /***/ (function(module, exports, __webpack_require__) {
@@ -16,7 +16,7 @@ __webpack_require__(1);
 __webpack_require__(33);
 __webpack_require__(2);
 __webpack_require__(3);
-__webpack_require__(6);
+__webpack_require__(4);
 
 var _mm=__webpack_require__(0);
 var tranList={
@@ -31,7 +31,7 @@ var tranList={
 	bindEvent: function(){
 	},
 	insertImg: function(){
-		var img=__webpack_require__(50);
+		var img=__webpack_require__(34);
 		$(".userImg>img").attr('src',img);
 	},
 	changeCss: function(){
@@ -112,10 +112,10 @@ $(function(){
 
 /***/ }),
 
-/***/ 50:
+/***/ 34:
 /***/ (function(module, exports) {
 
-module.exports = "C:/Users/Administrator/desktop/company/work/quickPayProject/dist/resource/img/avatar.png";
+module.exports = "https://juanapu.github.io/hijiko.github.io/dist/resource/img/avatar.png";
 
 /***/ })
 

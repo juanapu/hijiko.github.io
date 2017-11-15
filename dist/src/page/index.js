@@ -4,13 +4,13 @@ webpackJsonp([0],[
 /* 2 */,
 /* 3 */,
 /* 4 */,
-/* 5 */
+/* 5 */,
+/* 6 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 6 */,
 /* 7 */,
 /* 8 */,
 /* 9 */
@@ -20,7 +20,7 @@ webpackJsonp([0],[
 
 
 __webpack_require__(1);
-__webpack_require__(5);
+__webpack_require__(6);
 //require('../common/navsimple/index.js');
 __webpack_require__(2);
 __webpack_require__(0);
@@ -86,8 +86,8 @@ $(function(){
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(5);
 __webpack_require__(6);
+__webpack_require__(4);
 
 var marginTop,hideTop;
 
@@ -211,25 +211,25 @@ webpackContext.id = 19;
 /* 20 */
 /***/ (function(module, exports) {
 
-module.exports = "C:/Users/Administrator/desktop/company/work/quickPayProject/dist/resource/img/pg1.png";
+module.exports = "https://juanapu.github.io/hijiko.github.io/dist/resource/img/pg1.png";
 
 /***/ }),
 /* 21 */
 /***/ (function(module, exports) {
 
-module.exports = "C:/Users/Administrator/desktop/company/work/quickPayProject/dist/resource/img/pg2.png";
+module.exports = "https://juanapu.github.io/hijiko.github.io/dist/resource/img/pg2.png";
 
 /***/ }),
 /* 22 */
 /***/ (function(module, exports) {
 
-module.exports = "C:/Users/Administrator/desktop/company/work/quickPayProject/dist/resource/img/pg3.png";
+module.exports = "https://juanapu.github.io/hijiko.github.io/dist/resource/img/pg3.png";
 
 /***/ }),
 /* 23 */
 /***/ (function(module, exports) {
 
-module.exports = "C:/Users/Administrator/desktop/company/work/quickPayProject/dist/resource/img/pg4.png";
+module.exports = "https://juanapu.github.io/hijiko.github.io/dist/resource/img/pg4.png";
 
 /***/ })
 ],[9]);

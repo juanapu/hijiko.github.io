@@ -296,7 +296,7 @@ __webpack_require__(10);
 
 __webpack_require__(14);
 var _mm=__webpack_require__(0);
-__webpack_require__(6);
+__webpack_require__(4);
 
 var header={
 	init: function(){
@@ -353,9 +353,7 @@ $(function(){
 module.exports=header;
 
 /***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /*!
@@ -3896,6 +3894,8 @@ var Popover = function ($) {
 
 
 /***/ }),
+/* 5 */,
+/* 6 */,
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4747,7 +4747,7 @@ var Hogan = {};
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = "C:/Users/Administrator/desktop/company/work/quickPayProject/dist/resource/img/logo.png";
+module.exports = "https://juanapu.github.io/hijiko.github.io/dist/resource/img/logo.png";
 
 /***/ })
 /******/ ]);

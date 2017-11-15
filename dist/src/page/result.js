@@ -1,4 +1,4 @@
-webpackJsonp([1],{
+webpackJsonp([2],{
 
 /***/ 28:
 /***/ (function(module, exports, __webpack_require__) {
@@ -17,7 +17,7 @@ __webpack_require__(29);
 __webpack_require__(2);
 __webpack_require__(3);
 var _mm=__webpack_require__(0);
-var img=__webpack_require__(4);
+var img=__webpack_require__(5);
 var confirmPg={
 	init: function(){
 	 		var _this=this;
@@ -50,10 +50,10 @@ $(function(){
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /***/ (function(module, exports) {
 
-module.exports = "C:/Users/Administrator/desktop/company/work/quickPayProject/dist/resource/img/qrcode.png";
+module.exports = "https://juanapu.github.io/hijiko.github.io/dist/resource/img/qrcode.png";
 
 /***/ })
 

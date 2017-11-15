@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var htmlWebpackPlugin= require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var localPath='C:/Users/Administrator/desktop/company/work/quickPayProject/dist' ;
+var localPath='https://juanapu.github.io/hijiko.github.io/dist' ;
 
 
 var getHtmlConfig = function(name){
