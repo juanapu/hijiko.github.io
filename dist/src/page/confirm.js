@@ -8,7 +8,7 @@ webpackJsonp([3],{
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:50
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 12:48:43
+* @Last Modified time: 2017-11-16 13:10:48
 */
 
 
@@ -28,9 +28,11 @@ var confirmPg={
 	bindEvent: function(){
 		var _this=this;
 		document.getElementById('copyButton').addEventListener('click',function(){
-			_this.copyToClipboard(document.getElementById("copyTarget"));
 			$("button#copyButton~span").show('slow').delay(1000).hide('slow');
-			$("#copyTarget").select();
+			$("input#copyTarget").select(function(){
+				alert('right');
+			});
+			_this.copyToClipboard(document.getElementById("copyTarget"));
 		});
 	},
 	copyToClipboard: function(elem){

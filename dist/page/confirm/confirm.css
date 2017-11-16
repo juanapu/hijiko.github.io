@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 12:47:36
+* @Last Modified time: 2017-11-16 13:06:26
 */
 html,body{
 	background-color: #fff;
@@ -140,10 +140,19 @@ button#copyButton~span:before{
 }
 
  /****************************************for small mobile screen ************************************************/
-@media all and (max-width: 330px){
+@media all and (max-width: 360px){
     .confirmPg .notice>div>p:nth-child(3) {
 	    display: block;
 	    border-bottom: 2px solid #2f92a9;
 	    max-width: 20em;
 	}
+  .confirmPg>.notice>div>p>span{
+    color: rgb(237,34,36);
+  }
+  .confirmPg .QRcode>.QRwrap {
+    width: 69%;
+  }
+  .confirmPg p{
+    margin: 0em;
+  }
  }
