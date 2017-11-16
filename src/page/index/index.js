@@ -21,7 +21,6 @@ var index={
 		};
 		_this.insertImg();
 		_this.bindUserLogic(); // register,login,reset password etc page jumps
-		_this.changeCss();
 	},
 	insertHtml: function(string,insertDomSelector){
 		var insert=_mm.renderHtml(string,{});
@@ -49,10 +48,6 @@ var index={
 			 });
 		};
 		$("a.jsRegister").click(callbackFun);
-	},
-	changeCss: function(){
-		var checkInWechat=_header.checkInWechat();
-		alert(checkInWechat);
 	}
 }
 

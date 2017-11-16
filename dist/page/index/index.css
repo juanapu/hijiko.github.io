@@ -182,10 +182,10 @@ button.js-nxt{
 .main .content{
 	display: none;
 }
-.main .content>.description{
-    height: 172px;
+.main .content>.description {
+    height: 130px;
     margin-top: 2em;
-    line-height: 137px;
+    line-height: 130px;
 }
 .main .content>.description>img{
     width: 16em;
@@ -195,8 +195,15 @@ button.js-nxt{
 .main .registerForm .underLine .login{
 	float: left;
 }
+.main .loginForm{
+	margin-top: 13px;
+    padding-top: 3em;
+}
 
-
+.main .registerForm.loginForm {
+	    padding-top: 0em;
+	    margin-top: 0px;
+}
 
 /****************************************for PC ************************************************/
 @media all {
@@ -263,6 +270,7 @@ button.js-nxt{
 	.registerForm.loginForm {
 	    margin-top: -2em;
 	}
+
  }
 
  /****************************************for large screen ************************************************/
