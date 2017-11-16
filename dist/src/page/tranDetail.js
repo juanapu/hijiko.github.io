@@ -8,7 +8,7 @@ webpackJsonp([1],{
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:50
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 14:41:24
+* @Last Modified time: 2017-11-16 15:58:06
 */
 
 
@@ -36,12 +36,13 @@ var tranList={
 	},
 	changeCss: function(){
 		var elem1 = document.getElementById("cmtListWrap");
-		var style = window.getComputedStyle(elem1, null).overflow;
+		var style = window.getComputedStyle(elem1, null).overflowY;
 		if(style==='scroll'){
 			var htEm=$(window).height()/parseFloat($("body").css("font-size"));
 			var htForm=$(".formWrap").height()/parseFloat($("body").css("font-size"));
 			var htBt=$(".actionWrap.mobile>div").height()/parseFloat($("body").css("font-size"));
 			var htCmt=htEm-htForm-htBt-8;
+			 console.log(htCmt);
 			$("#cmtListWrap").css({"max-height":""+htCmt+"em"});
 		};
 	},

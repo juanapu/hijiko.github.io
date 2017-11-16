@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 14:39:37
+* @Last Modified time: 2017-11-16 16:15:00
 */
 body,html{
   background-color: #fff;
@@ -215,13 +215,15 @@ body,html{
   }
   .tranDetailPg .formWrap {
     max-height: 10em;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   .tranDetailPg .formWrap.rmMxHt{
     max-height: 30em;
   }
   .tranDetailPg #cmtListWrap { /**add maximum height**/
-    overflow: scroll;/*maximum height defined in JS*/
+    overflow-y: scroll;
+    overflow-x: hidden;/*maximum height defined in JS*/
   }
   .tranDetailPg .commentWrap .innerTtl {
     background-color: rgb(134,136,135);
@@ -262,6 +264,32 @@ body,html{
   .tranDetailPg .popWrap textarea{
     margin: 0em auto;
   }
+
+/********visible scrollbar in mobile******************/
+  /* !important is needed sometimes */
+   .tranDetailPg .formWrap::-webkit-scrollbar,.tranDetailPg #cmtListWrap::-webkit-scrollbar {
+      width: 12px !important;
+   }
+
+   /* Track */
+  .tranDetailPg .formWrap::-webkit-scrollbar-track,.tranDetailPg #cmtListWrap::-webkit-scrollbar-track {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important; 
+     border-radius: 10px !important;
+     border: none;
+   }
+
+   /* Handle */
+   .tranDetailPg .formWrap::-webkit-scrollbar-thumb,.tranDetailPg #cmtListWrap::-webkit-scrollbar-thumb {
+     -webkit-border-radius: 10px !important;
+     border-radius: 10px !important;
+     background: #277b8e4d !important; 
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important; 
+
+   }
+   .tranDetailPg .formWrap::-webkit-scrollbar-thumb:window-inactive,.tranDetailPg #cmtListWrap::-webkit-scrollbar-thumb:window-inactive {
+     background: #277b8e4d !important; 
+   }
+
 
 }
 
