@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 13:06:26
+* @Last Modified time: 2017-11-16 14:11:59
 */
 html,body{
 	background-color: #fff;
@@ -79,19 +79,19 @@ html,body{
   	display: inline-block;
   	padding-right: 2em;
   }
-.confirmPg input#copyTarget {
+  .confirmPg input#copyTarget {
     border: none;
 }
 .confirmPg input#copyTarget {
     width: 14em;
-}
+} 
 
 /****button**/
-button#copyButton~span{
+.confirmPg button#copyButton~span{
   position: relative;
   display: none;
 }
-button#copyButton~span:before{
+.confirmPg button#copyButton~span:before{
     content: '\5DF2\590D\5236\FF01';
     background-color: #f7e2e2;
     border: 1px solid #dbd6d6;
@@ -102,6 +102,13 @@ button#copyButton~span:before{
     border-radius: 5px;
     color: #444;
 }
+.confirmPg input#copyTarget::selection{
+    background-color: #41b9d5;
+}
+.confirmPg input#copyTarget::-moz-selection{
+      background-color: #41b9d5;
+}
+
 
 /****************************************for mobile ************************************************/
  @media all and (max-width: 500px){

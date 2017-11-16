@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:50
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 13:54:52
+* @Last Modified time: 2017-11-16 14:11:21
 */
 "use strict";
 
@@ -23,10 +23,8 @@ var confirmPg={
 		var _this=this;
 		document.getElementById('copyButton').addEventListener('click',function(){
 			$("button#copyButton~span").show('slow').delay(1000).hide('slow');
-			$("input#copyTarget").select(function(){
-				alert('right');
-			});
-			//_this.copyToClipboard(document.getElementById("copyTarget"));
+			$("input#copyTarget").select();
+			_this.copyToClipboard(document.getElementById("copyTarget"));
 		});
 	},
 	copyToClipboard: function(elem){
