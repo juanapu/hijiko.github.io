@@ -52,7 +52,7 @@ var index={
 	},
 	changeCss: function(){
 		var checkInWechat=_header.checkInWechat();
-		console.log(checkInWechat);
+		alert(checkInWechat);
 	}
 }
 
