@@ -183,9 +183,9 @@ button.js-nxt{
 	display: none;
 }
 .main .content>.description {
-    height: 130px;
+    height: 12em;
     margin-top: 2em;
-    line-height: 130px;
+    line-height: 12em;
 }
 .main .content>.description>img{
     width: 16em;
@@ -237,10 +237,14 @@ button.js-nxt{
 	.main .content>.description>img {
 	    width: 12em;
 	}
+	.main .content>.description {
+	    height: 6em;
+	    line-height: 6em;
+	}
  }
 
  /****************************************for small mobile screen ************************************************/
-@media all and (max-width: 330px){
+@media all and (max-width: 360px){
 	 .main input[type="submit"] {
 	    padding: 0.6em 7em;
 	    font-size: 1em;
@@ -265,7 +269,8 @@ button.js-nxt{
 		font-size: 0.7em;
 	}
 	.main .content>.description {
-	    height: 116px;
+	    height: 3.5em;
+	    line-height: 3.5em;
 	}
 	.registerForm.loginForm {
 	    margin-top: -2em;
