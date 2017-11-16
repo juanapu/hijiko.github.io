@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-15 15:56:55
+* @Last Modified time: 2017-11-16 14:39:37
 */
 body,html{
   background-color: #fff;
@@ -214,8 +214,11 @@ body,html{
     height:  calc(100% - 2em);
   }
   .tranDetailPg .formWrap {
-    max-height: 21em;
+    max-height: 10em;
     overflow: scroll;
+  }
+  .tranDetailPg .formWrap.rmMxHt{
+    max-height: 30em;
   }
   .tranDetailPg #cmtListWrap { /**add maximum height**/
     overflow: scroll;/*maximum height defined in JS*/

@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:50
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-15 15:22:10
+* @Last Modified time: 2017-11-16 14:41:24
 */
 "use strict";
 
@@ -55,6 +55,11 @@ var tranList={
 	},
 	pageLogic: function(){
 			var cmtNum=$('.commentListWrap .cmtInner').length;
+			if(!cmtNum){
+				$(".tranDetailPg .formWrap").addClass('rmMxHt');
+			}else{
+				$(".tranDetailPg .formWrap").removeClass('rmMxHt');
+			};
 	},
 	addPOP: function(){
 		$(".js-POP").click(function(){
