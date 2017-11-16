@@ -5,7 +5,7 @@ require('./index.css');
 //require('../common/navsimple/index.js');
 require('../common/footer/index.js');
 require('../../util/mm.js');
-require('../common/header/index.js');
+var _header=require('../common/header/index.js');
 var _mm=require('../../util/mm.js');
 require('./layout.js');
 var loginHtml=require('./login.string');  //get customized string module for login & register
@@ -21,6 +21,7 @@ var index={
 		};
 		_this.insertImg();
 		_this.bindUserLogic(); // register,login,reset password etc page jumps
+		_this.changeCss();
 	},
 	insertHtml: function(string,insertDomSelector){
 		var insert=_mm.renderHtml(string,{});
@@ -48,7 +49,10 @@ var index={
 			 });
 		};
 		$("a.jsRegister").click(callbackFun);
-
+	},
+	changeCss: function(){
+		var checkInWechat=_header.checkInWechat();
+		console.log(checkInWechat);
 	}
 }
 

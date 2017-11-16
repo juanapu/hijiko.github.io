@@ -2,7 +2,7 @@
 * @Author: Juana
 * @Date:   2017-08-17 08:31:05
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-09-25 20:15:03
+* @Last Modified time: 2017-11-16 11:03:27
 */
 
 'use strict';
@@ -99,5 +99,4 @@ var _mm={
 	},
 };
 
-console.log("here is mm js");
 module.exports=_mm;

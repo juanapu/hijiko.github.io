@@ -24,7 +24,7 @@ __webpack_require__(6);
 //require('../common/navsimple/index.js');
 __webpack_require__(2);
 __webpack_require__(0);
-__webpack_require__(3);
+var _header=__webpack_require__(3);
 var _mm=__webpack_require__(0);
 __webpack_require__(16);
 var loginHtml=__webpack_require__(17);  //get customized string module for login & register
@@ -40,6 +40,7 @@ var index={
 		};
 		_this.insertImg();
 		_this.bindUserLogic(); // register,login,reset password etc page jumps
+		_this.changeCss();
 	},
 	insertHtml: function(string,insertDomSelector){
 		var insert=_mm.renderHtml(string,{});
@@ -67,7 +68,10 @@ var index={
 			 });
 		};
 		$("a.jsRegister").click(callbackFun);
-
+	},
+	changeCss: function(){
+		var checkInWechat=_header.checkInWechat();
+		console.log(checkInWechat);
 	}
 }
 

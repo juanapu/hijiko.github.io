@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-09-03 09:02:47
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-15 17:13:50
+* @Last Modified time: 2017-11-16 11:19:49
 */
 "use strict";
 
@@ -16,6 +16,7 @@ var header={
 		_this.insertImg();
 		_this.bindEvent();
 		_this.pageMove();
+		_this.checkInWechat();
 	},
 	insertImg: function(){
 		var img=require('../../../resource/img/logo.png');
@@ -61,6 +62,17 @@ var header={
 		$("a.navbar-brand").click(function(){
 			window.location.href="./index.html";
 		});
+	},
+	checkInWechat: function(){
+		var ua=window.navigator.userAgent.toLowerCase();
+		console.log(ua);
+		if((ua.match(/MicroMessenger/i))=="micromemessenger"){
+			return true;
+		}
+		else{
+			return false;
+		}
+
 	}
 };
 

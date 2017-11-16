@@ -159,7 +159,7 @@
 * @Author: Juana
 * @Date:   2017-08-17 08:31:05
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-09-25 20:15:03
+* @Last Modified time: 2017-11-16 11:03:27
 */
 
 
@@ -256,7 +256,6 @@ var _mm={
 	},
 };
 
-console.log("here is mm js");
 module.exports=_mm;
 
 /***/ }),
@@ -290,7 +289,7 @@ __webpack_require__(10);
 * @Author: Administrator
 * @Date:   2017-09-03 09:02:47
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-15 17:13:50
+* @Last Modified time: 2017-11-16 11:19:49
 */
 
 
@@ -304,6 +303,7 @@ var header={
 		_this.insertImg();
 		_this.bindEvent();
 		_this.pageMove();
+		_this.checkInWechat();
 	},
 	insertImg: function(){
 		var img=__webpack_require__(15);
@@ -349,6 +349,17 @@ var header={
 		$("a.navbar-brand").click(function(){
 			window.location.href="./index.html";
 		});
+	},
+	checkInWechat: function(){
+		var ua=window.navigator.userAgent.toLowerCase();
+		console.log(ua);
+		if((ua.match(/MicroMessenger/i))=="micromemessenger"){
+			return true;
+		}
+		else{
+			return false;
+		}
+
 	}
 };
 
@@ -3933,7 +3944,6 @@ var commonJs={
 $(function(){
 	commonJs.init();
 });
-
 
 
 
