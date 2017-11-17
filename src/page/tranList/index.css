@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-15 15:52:45
+* @Last Modified time: 2017-11-16 16:37:51
 */
 body,html{
   background-color: #fff;
@@ -155,15 +155,17 @@ body * {
     word-wrap: break-word;
   }
   .tranListPg .mobile .wrap {
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0em;
     margin: 1em;
     border-radius: 5px;
+    box-shadow: 5px 5px 5px #1c3a491c;
   }
  .tranListPg .mobile .state div{
   display: inline-block;
   width: 50%;
   border: none;
+  text-shadow: 1px 1px 1px #01080f;
  }
  .tranListPg .mobile .state>div {
     height: 2.5em;
@@ -196,6 +198,12 @@ body * {
   .tranListPg .mobile .detail>p{
     padding: 0em 1em;
     margin: 0.5em 0em;
+  }
+  .tranListPg .mobile .detail>p a{
+    color: #697f85;
+  }
+  .tranListPg .mobile .detail>p a:hover{
+    cursor: hand;
   }
   .tranListPg .mobile .typeDate>div{
      padding: 0em 1em;

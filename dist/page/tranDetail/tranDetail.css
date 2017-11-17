@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 16:15:00
+* @Last Modified time: 2017-11-17 14:15:55
 */
 body,html{
   background-color: #fff;
@@ -165,6 +165,9 @@ body,html{
 .tranDetailPg .cmtInner {
     padding: 1em;
 }
+.tranDetailPg span.pyMethod{
+    color: red;
+}
 
 /****************************************for tablet ************************************************/
 @media screen and (max-width: 700px) {
@@ -205,6 +208,7 @@ body,html{
     text-align: center;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
   }
   .tranDetailPg button.btn.cmnBtn.js-POP{
