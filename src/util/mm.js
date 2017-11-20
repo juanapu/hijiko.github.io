@@ -2,7 +2,7 @@
 * @Author: Juana
 * @Date:   2017-08-17 08:31:05
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-20 16:50:15
+* @Last Modified time: 2017-11-20 20:30:27
 *
 *  here is mm js
 */
@@ -12,8 +12,8 @@
 var _this = this;
 var Hogan = require('hogan.js');
 var conf = {
-	serverHost : 'http://localhost:8080',
-	fileHost: 'http://localhost:8080/dist/view/'
+	serverHost : 'https://juanapu.github.io/hijiko.github.io',
+	fileHost: 'https://juanapu.github.io/hijiko.github.io/dist/view/'
 };
 var _mm={
 	request: function(param){
