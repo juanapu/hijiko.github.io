@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 16:37:51
+* @Last Modified time: 2017-11-20 19:42:32
 */
 body,html{
   background-color: #fff;
@@ -165,7 +165,7 @@ body * {
   display: inline-block;
   width: 50%;
   border: none;
-  text-shadow: 1px 1px 1px #01080f;
+/*  text-shadow: 1px 1px 1px #01080f; */
  }
  .tranListPg .mobile .state>div {
     height: 2.5em;
@@ -177,6 +177,7 @@ body * {
    .tranListPg .mobile .state div:first-child{
         background-color:rgb(200,231,234);
         font-size: 2em;
+        color: #fff!important;
    }
     .tranListPg .mobile .state div:last-child .count{
       font-size: 1.5em;

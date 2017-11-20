@@ -2,7 +2,9 @@
 * @Author: Juana
 * @Date:   2017-08-17 08:31:05
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 11:03:27
+* @Last Modified time: 2017-11-20 16:50:15
+*
+*  here is mm js
 */
 
 'use strict';
@@ -10,19 +12,21 @@
 var _this = this;
 var Hogan = require('hogan.js');
 var conf = {
-	serverHost : ''
+	serverHost : 'http://localhost:8080',
+	fileHost: 'http://localhost:8080/dist/view/'
 };
 var _mm={
 	request: function(param){
 		$.ajax({
 			type	: param.method || 'get',
-			url		: param.url 	|| '',
+			//url		: param.url 	|| '',
+			url : param.url?param.url+'?'+$.map(param.data,function(val,key){return key+'='+val}).join('&'):'',
 			dataType: param.type    || 'json',
 			data    : param.data    || '',
 			success : function(res,txtStatus){
 				//request successfully
 				if(0 === res.status){
-					typeof param.success === 'function' && param.success(res.data,res.msg);
+					typeof param.success === 'function' && param.success(res.data,res.message);
 				}
 				//no login 
 				else if(10 === res.status){
@@ -30,7 +34,7 @@ var _mm={
 				}
 				//request data errorf
 				else if(1=== res.status){
-					typeof param.error === 'function' && param.error(res.msg);
+					typeof param.error === 'function' && param.error(res.message);
 				}
 				else{
 					console.log("the status is "+res.status);
@@ -45,6 +49,10 @@ var _mm={
 	//get server host's address
 	getServerUrl : function(path){
 		return conf.serverHost+path;
+	},
+	//get file host location
+	getFileHost: function(path){
+		return conf.fileHost+path;
 	},
 	//get url's certain value
 	getUrlParam : function(name){
@@ -66,10 +74,10 @@ var _mm={
 		alert(msg || 'wrong behavior');
 	},
 	// phone,email,empty varification
-	validate : function(value,type){
+	validate : function(value,type,required){
 		var value = $.trim(value);
 		//check whether it is empty
-		if('require' === type){
+		if('required' === required){
 			return !!value; // return true if value exist
 		};
 		//phone varification
@@ -85,7 +93,7 @@ var _mm={
 			return  /^[A-Za-z]\w{7,14}$/.test(value);
 		};
 		//username varification
-		if('username' === type){
+		if('nickname' === type){
 			return /^[a-zA-Z0-9_-]{4,16}$/.test(value); 
 		};
 	},

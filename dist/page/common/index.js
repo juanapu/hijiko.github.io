@@ -147,7 +147,7 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -159,27 +159,31 @@
 * @Author: Juana
 * @Date:   2017-08-17 08:31:05
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 11:03:27
+* @Last Modified time: 2017-11-20 16:50:15
+*
+*  here is mm js
 */
 
 
 
 var _this = this;
-var Hogan = __webpack_require__(11);
+var Hogan = __webpack_require__(17);
 var conf = {
-	serverHost : ''
+	serverHost : 'http://localhost:8080',
+	fileHost: 'http://localhost:8080/dist/view/'
 };
 var _mm={
 	request: function(param){
 		$.ajax({
 			type	: param.method || 'get',
-			url		: param.url 	|| '',
+			//url		: param.url 	|| '',
+			url : param.url?param.url+'?'+$.map(param.data,function(val,key){return key+'='+val}).join('&'):'',
 			dataType: param.type    || 'json',
 			data    : param.data    || '',
 			success : function(res,txtStatus){
 				//request successfully
 				if(0 === res.status){
-					typeof param.success === 'function' && param.success(res.data,res.msg);
+					typeof param.success === 'function' && param.success(res.data,res.message);
 				}
 				//no login 
 				else if(10 === res.status){
@@ -187,7 +191,7 @@ var _mm={
 				}
 				//request data errorf
 				else if(1=== res.status){
-					typeof param.error === 'function' && param.error(res.msg);
+					typeof param.error === 'function' && param.error(res.message);
 				}
 				else{
 					console.log("the status is "+res.status);
@@ -202,6 +206,10 @@ var _mm={
 	//get server host's address
 	getServerUrl : function(path){
 		return conf.serverHost+path;
+	},
+	//get file host location
+	getFileHost: function(path){
+		return conf.fileHost+path;
 	},
 	//get url's certain value
 	getUrlParam : function(name){
@@ -223,10 +231,10 @@ var _mm={
 		alert(msg || 'wrong behavior');
 	},
 	// phone,email,empty varification
-	validate : function(value,type){
+	validate : function(value,type,required){
 		var value = $.trim(value);
 		//check whether it is empty
-		if('require' === type){
+		if('required' === required){
 			return !!value; // return true if value exist
 		};
 		//phone varification
@@ -242,7 +250,7 @@ var _mm={
 			return  /^[A-Za-z]\w{7,14}$/.test(value);
 		};
 		//username varification
-		if('username' === type){
+		if('nickname' === type){
 			return /^[a-zA-Z0-9_-]{4,16}$/.test(value); 
 		};
 	},
@@ -260,116 +268,84 @@ module.exports=_mm;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Administrator
-* @Date:   2017-09-02 09:30:39
-* @Last Modified by:   Administrator
-* @Last Modified time: 2017-09-23 09:56:08
-*/
 
 
-__webpack_require__(10);
 
+__webpack_require__(5);
+//require('../css/style.css')
 
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+/*****define public url*******/
+var rtFolderUrl='http://localhost:8080/dist/view/';
+var _loading='../common/loading/index.js';
 
-"use strict";
-/*
-* @Author: Administrator
-* @Date:   2017-09-03 09:02:47
-* @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 11:19:49
-*/
-
-
-__webpack_require__(14);
-var _mm=__webpack_require__(0);
-__webpack_require__(4);
-
-var header={
+var commonJs={
 	init: function(){
 		var _this=this;
-		_this.insertImg();
-		_this.bindEvent();
-		_this.pageMove();
-		_this.checkInWechat();
+		FastClick.attach(document.body);  /****** mobile click event compatibility ******/
+//		_this.loading();
+		$("body>div").ready(function(){
+//			_this.unloading();
+		});
 	},
-	insertImg: function(){
-		var img=__webpack_require__(15);
-		$(".headerWrap>nav.navbar>a.navbar-brand>img").attr('src',img);
+	/*******page loading setting**********/
+	loading: function(){
+		$("#loadingWrap").show().css({opacity: 1,filter: 'alpha(opacity=100)'});
 	},
-	bindEvent: function(){
+	unloading: function(){
+		$("#loadingWrap").css({opacity: 0,filter: 'alpha(opacity=0)'}).hide();
+	}, 
+	/***********cookie setting && login check******************/
+	checkLogin: function(){
 		var _this=this;
-				$(".header button.search-btn").click(function(){
-			_this.searchSubmit();
-		});
-		$(".header .search-con input.search-input").focus(function(){
-			var contVal=$(this).attr("placeholder");
-			$(this).attr("placeholder","");
-			$(this).blur(function(){
-				$(this).attr("placeholder",contVal);
-			});
-		}).keyup(function(e){
-			if(e.keyCode===13){
-				_this.searchSubmit();
-			}
-		});
-		/**********mobile version menu bar*************/
-		$(".headerWrap .bar.mobile").click(function(e){
-			$(".bar.mobile>ul.navbar-nav").toggle('slow').siblings('a').toggleClass('showUl');
-			e.preventDefault(e);
-		});
-		$(".headerWrap .bar.pc ul li").click(function(){
-			$(this).addClass('active').siblings().removeClass('active');
-		});
-		$(".headerWrap .bar.mobile ul li").click(function(e){
-			e.stopPropagation(e);  
-			$(this).addClass('active').siblings().removeClass('active');
-		});
+		var logInfo={};
+		/****if it's not home page, check cookie****/
+		var url=window.location.href;
+		var pgUrl=url.replace(rtFolderUrl,'').substring(0,5);
+		if((pgUrl.length===0)||(pgUrl==='index')){
+			/******it is home page*******/
+		}else{
+			var cookieStore=_this.getCookie(); 
+			if((!cookieStore.nickname)||(!cookieStore.password)){
+				logInfo.login=false;
+			}else{
+				logInfo.login=true;
+				logInfo.cookie=cookieStore;
+			};
+			return logInfo;
+		};
 	},
-	searchSubmit: function(){
-		var textVal=$(".header .search-con input.search-input").val();
-		if(textVal){
-			console.log(textVal);
-			window.location.href='./list.html?keyword='+textVal;
-		}
+	getCookie: function(){
+		var cookieStore={
+			nickname: Cookies.get('nickname'),
+			password: Cookies.get('password')?$.base64.decode(Cookies.get('password')):Cookies.get('password'),
+			user_id: Cookies.get('user_id')?Cookies.get('user_id'):0
+		};
+		return cookieStore;
 	},
-	pageMove: function(){
-		$("a.navbar-brand").click(function(){
-			window.location.href="./index.html";
-		});
+	setCookie: function(name,val){
+		Cookies.set(name,val,{expires: 7,path : '/'});
 	},
-	checkInWechat: function(){
-		var ua=window.navigator.userAgent.toLowerCase();
-		console.log(ua);
-		if((ua.match(/MicroMessenger/i))=="micromemessenger"){
-			return true;
-		}
-		else{
-			return false;
-		}
-
+	cleanCookie: function(){
+		Cookies.remove('nickname', { path: '/' });
+		Cookies.remove('password', { path: '/' });
+		Cookies.remove('user_id', { path: '/' });
 	}
+
 };
 
 $(function(){
-	header.init();
+	commonJs.init();
 });
 
-module.exports=header;
+
+module.exports=commonJs;
 
 /***/ }),
+/* 2 */,
+/* 3 */,
 /* 4 */
 /***/ (function(module, exports) {
 
@@ -3911,52 +3887,103 @@ var Popover = function ($) {
 
 
 /***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */
+/* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+"use strict";
+/*
+* @Author: Administrator
+* @Date:   2017-09-02 09:30:39
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-09-23 09:56:08
+*/
 
+
+__webpack_require__(16);
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = "https://juanapu.github.io/hijiko.github.io/dist/resource/img/logo.png";
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/*
+* @Author: Administrator
+* @Date:   2017-11-17 14:59:53
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-19 13:59:49
+*/
 
 
+var _mm = __webpack_require__(0);
 
-__webpack_require__(1);
-//require('../css/style.css')
-
-var commonJs={
-	init: function(){
-		var _this=this;
-		FastClick.attach(document.body);  /****** mobile click event compatibility ******/
-		_this.pageMove();
+var _user = {
+	register: function(data,resolve,reject){
+		_mm.request({
+			url   :_mm.getServerUrl('/users/register'),
+			data : data,
+			method : 'post',
+			success : resolve,
+			error   : reject
+		})
 	},
-	pageMove: function(){
-		
+	login: function(userInfo,resolve,reject){
+		_mm.request({
+			url   :_mm.getServerUrl('/users/login'),
+			data  : userInfo,
+			method: 'post',
+			success: resolve,
+			error  : reject
+		});
+
+	},
+	//logout function
+	logout : function(resolve,reject){
+		_mm.request({
+			url : _mm.getServerUrl('/users/logout'),
+			method : 'POST',
+			success : resolve,
+			error   : reject
+		});
 	}
 };
 
-$(function(){
-	commonJs.init();
-});
 
-
-
+module.exports = _user;
 
 /***/ }),
 /* 9 */,
-/* 10 */
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(1);
+
+
+/***/ }),
+/* 15 */,
+/* 16 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 11 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -3976,14 +4003,14 @@ $(function(){
 
 // This file is for use with Node.js. See dist/ for browser files.
 
-var Hogan = __webpack_require__(12);
-Hogan.Template = __webpack_require__(13).Template;
+var Hogan = __webpack_require__(18);
+Hogan.Template = __webpack_require__(19).Template;
 Hogan.template = Hogan.Template;
 module.exports = Hogan;
 
 
 /***/ }),
-/* 12 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -4412,7 +4439,7 @@ module.exports = Hogan;
 
 
 /***/ }),
-/* 13 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -4757,18 +4784,6 @@ var Hogan = {};
 
 })( true ? exports : Hogan);
 
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-module.exports = "https://juanapu.github.io/hijiko.github.io/dist/resource/img/logo.png";
 
 /***/ })
 /******/ ]);

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HiJiko首页</title>
+	<title>HiJiko 交易详情</title>
+
 	  <meta charset="utf-8">
 	  <meta http-equiv="cache-control" content="no-cache"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -9,33 +10,40 @@
 	<link rel="stylesheet" type="text/css" href="../module/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../module/fontAwesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="../module/tether/js/tether.min.js"></script>
-<link href="../page/common/common.css?fa8fb97f44ba5bed55e7" rel="stylesheet"><link href="../page/tranDetail/tranDetail.css?fa8fb97f44ba5bed55e7" rel="stylesheet"></head> 
+ 
+<link href="../page/common/common.css?6b21f8dad33073fa051e" rel="stylesheet"><link href="../page/tranDetail/tranDetail.css?6b21f8dad33073fa051e" rel="stylesheet"></head>
 <body>
 <!-- crtState=current state; rcvName=receiver name;rcvAlpy: receiver alipay account; tle: title;hstWrap:history wrap;bhv=behaviour; cmntTtl: comment title; cmtCnt: comment content; innerTtl: inner comment title--> 
 		
 <div class="headerWrap"> 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
 	  <a class="navbar-brand" href="#">
-	  	<img src="xxxHTMLLINKxxx0.47011981657140090.6364572141837308xxx" />
+	  	<img src="xxxHTMLLINKxxx0.09389027378574810.14862478690954206xxx" />
 	  </a>
-	  	<div class="bar pc">
+	  	<div class="bar pc">		
 		  <ul class="navbar-nav">
-		    <li class="nav-item">
-		      <a class="nav-link jsRegister" href="#">注册</a>
+  		    <li class="nav-item">
+		      <a class="nav-link nickName" href="#"></a>
 		    </li>
 		    <li class="nav-item">
-		      <a class="nav-link jsLogin" href="#">登录</a>
+		      <a class="nav-link jsTranMg" href="#">交易管理</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link jsLogout" href="#">退出登录</a>
 		    </li>
 		 </ul>
 		</div>
-	 	<div class="bar mobile">
+	 	<div class="bar mobile">	
+ 		  	  <div class="user">
+		  	  	<span class="nickName"></span>
+		  	  </div>
 		 	<a href=""><i class="fa fa-bars" aria-hidden="true"></i></a>
 			    <ul class="navbar-nav">
 				    <li class="nav-item">
-				      <a class="nav-link jsRegister" href="#">注册</a>
+				      <a class="nav-link jsTranMg" href="#">交易管理</a>
 				    </li>
 				    <li class="nav-item">
-				      <a class="nav-link jsLogin" href="#">登录</a>
+				      <a class="nav-link jsLogout" href="#">退出登录</a>
 				    </li>
 			  </ul>
 		</div>
@@ -59,7 +67,7 @@
 								<div class="mount"><span class="mount">10000</span><span class="currency"></span>RMB</div>
 							</div>
 							<div class="rcvAlpyWrap">
-								<div class="tle">收款方支付宝账号<span class="pyMethod">（支付宝）</span></div>
+								<div class="tle">收款方支付宝账号</div>
 								<div class="alpy">123456@qq.com</div>
 							</div>
 						</div>
@@ -138,6 +146,8 @@
 			<script src="../module/fastclick/fastclick.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="../module/jqueryMobile/jquery.mobile.custom.js"></script>
+	<script src="../module/jsCookie/js.cookie.js"></script>
+	<script src="../module/jquery-base64-master/jquery.base64.min.js"></script>
  
 		<script type="text/javascript" src="../module/twbsPagination/jquery.twbsPagination.min.js"></script>
-<script type="text/javascript" src="../page/common/index.js?fa8fb97f44ba5bed55e7"></script><script type="text/javascript" src="../src/page/tranDetail.js?fa8fb97f44ba5bed55e7"></script></body>
+<script type="text/javascript" src="../page/common/index.js?6b21f8dad33073fa051e"></script><script type="text/javascript" src="../src/page/tranDetail.js?6b21f8dad33073fa051e"></script></body>

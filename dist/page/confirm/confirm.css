@@ -2,10 +2,12 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 14:11:59
+* @Last Modified time: 2017-11-20 16:12:22
 */
 html,body{
 	background-color: #fff;
+  height: 100%;
+  width: 100%;
 }
 
 .headerWrap nav.navbar {
@@ -35,35 +37,11 @@ html,body{
   .confirmPg{
   	padding-top: 70px;
   }
+  .confirmPg button.cmnBtn {
+    margin: 3em;
+  }
 
-  .confirmPg .QRcode{
-  	background-color: #fff;
-	border: 1px solid rgba(0,0,0,0.1);
-  	border-radius: 5px;
-  	width: 80%;
-  	max-width: 300px;
-  	margin: 20px auto;
-  }
-   .confirmPg .QRcode>.QRwrap{
-   	width: 80%;
-   	margin: 3em auto;
 
-   }
-  .confirmPg .QRImg>img{
-	width: 100%;
-  }
-  .confirmPg .QRcode>.QRwrap .mount,.confirmPg .QRcode>.QRwrap .desc{
-  	text-align: center;
-  	font-weight: 800;
-  }
-  .confirmPg .QRcode>.QRwrap .mount{
-  	font-size: 2em;
-  	padding-top: 1em;
-  }
-  .confirmPg .QRcode>.QRwrap .desc{
-  	font-size: 1.1em;
-  	padding-bottom: 1em;
-  }
   .confirmPg .notice>div>p{
     display: inline-block;
   }
@@ -123,8 +101,7 @@ html,body{
      background-color: rgb(43,130,218);
   }
     .confirmPg {
-      font-size: 0.8em;
-      padding-top: 14px;
+      font-size: 1em;
     }
     .confirmPg .QRcode>.QRwrap {
     margin: 1em auto;
@@ -162,4 +139,292 @@ html,body{
   .confirmPg p{
     margin: 0em;
   }
+ }/*
+* @Author: Administrator
+* @Date:   2017-11-17 23:20:49
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-20 15:54:36
+*/
+body{
+	position:relative;
+}
+.fixed-top{
+    z-index: 10!important;
+}
+#loadingWrap{
+	display: none;
+	opacity: 0;
+    top: 0px;
+    filter: alpha(opacity=0);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.9);
+	z-index: 30;
+}
+#loading {
+    width: 100px;
+    height: 100px;
+    margin: 20em auto;
+    position: relative;
+}
+.outer-shadow, .inner-shadow, #timer {
+    z-index: 6;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.inner-shadow {
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0.8);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.dot {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 10px;
+    margin-top: -5px;
+    -webkit-animation: dot 8s linear both;
+    -webkit-transform-origin: 0% 50%;
+}
+.dot span {
+    position: absolute;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+.hold {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+    -webkit-border-radius: 100%;
+    background-color: #f50;
+}
+#left .pie {
+    z-index: 1;
+    -webkit-animation: left 4s linear both;
+}
+
+
+.pie {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 100%;
+    clip: rect(0px, 50px, 100px, 0px);
+}
+
+.pie, .dot span {
+    background-color: rgba(255,255,255,0.5);
+}
+#right {
+    z-index: 3;
+    -webkit-transform: rotate(180deg);
+}
+
+.hold {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+    -webkit-border-radius: 100%;
+    background-color: rgba(255,85,0,0.5);
+}
+
+#right .pie {
+    -webkit-animation: right 4s linear both;
+    -webkit-animation-delay: 4s;
+}
+
+.dot {
+		-webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}/*
+* @Author: Administrator
+* @Date:   2017-09-03 09:03:10
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-18 19:57:02
+*/
+
+
+/************************************common css****************************************************/
+
+.headerWrap .navbar{
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.headerWrap nav.navbar{
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.headerWrap nav.navbar a.navbar-brand, .headerWrap .bar{
+    display: inline-block;
+    vertical-align: middle;
+    height: 67px;
+    line-height: 67px;
+}
+ .headerWrap nav.navbar .bar{
+    float: right;
  }
+.headerWrap nav.navbar a{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.headerWrap .bar.mobile{
+    position: relative;
+}
+.headerWrap .bar.mobile>div.user {
+    position: absolute;
+    color: #999;
+    right: 2em;
+    top: 0.5em;
+}
+
+
+/****************************************for tablet ************************************************/
+ @media all and (max-width: 800px){
+    .headerWrap .navbar{
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+ }
+
+/****************************************for PC ************************************************/
+@media all {
+      .headerWrap nav.navbar .bar.mobile{
+        display: none;
+      }    
+    .headerWrap .bar.pc ul.navbar-nav,.headerWrap .bar.pc ul.navbar-nav li {
+        display: inline-block!important;
+    }
+    .headerWrap>nav.navbar>a.navbar-brand>img{
+         height: 46px;
+        display: inline-block;
+    }
+    .headerWrap .bar.pc a.nav-link {
+        font-size: 1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        color: rgb(47, 146, 169);
+     }
+     .headerWrap .bar.pc a.nav-link.nickName{
+        font-size: 0.8em;
+        color: rgba(0,0,0,0.3);
+     }
+
+     /*********udnerline animation effect***************/
+      .headerWrap .bar.pc a.nav-link.jsTranMg, .headerWrap .bar.pc a.nav-link.jsLogout{
+     /*  -webkit-transition: all 1s; 
+        transition: all 1s; */
+        position: relative;
+      }
+      .headerWrap .bar.pc a.nav-link.jsTranMg:after, .headerWrap .bar.pc a.nav-link.jsLogout:after {
+        content: '';
+          position: absolute;
+          left: 0;
+          bottom: -0.3em;
+          display: inline-block;
+          height: 1em;
+          width: 100%;
+          border-bottom: 1px solid;
+          margin-top: 10px;
+          opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: scale(0,1);
+            transform: scale(0,1);
+    }
+
+    .headerWrap .bar.pc a.nav-link.jsTranMg:hover:after, .headerWrap .bar.pc a.nav-link.jsLogout:hover:after{
+  /*      color: #feffff;
+        text-shadow: 1px 1px 1px black; */
+          opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    .headerWrap .nav-link{
+        display: inline;
+    }
+    .headerWrap .bar.pc li.nav-item.active {
+        background-color: none;
+        text-align: center;
+    }
+}
+
+ 
+/****************************************for mobile ************************************************/
+ @media all and (max-width: 500px){
+  .headerWrap nav.navbar .bar.pc{
+        display: none;
+    }
+     .headerWrap nav.navbar .bar.mobile ul.navbar-nav{
+       display: none;
+    }
+  .headerWrap .bar.mobile>a>i.fa.fa-bars{
+        font-size: 26px;
+         vertical-align: middle;
+        vertical-align: -webkit-baseline-middle;
+    }
+    .headerWrap nav.navbar .bar.mobile{
+        display: inline-block;
+    }
+    .headerWrap .navbar{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .headerWrap .bar.mobile ul li{
+        line-height: 40px;
+    }
+    .headerWrap ul.navbar-nav {
+        position: absolute;
+        width: 7em;
+        right: -5px;
+        text-align: right;
+        border-radius: 5px;
+    }
+    .headerWrap ul.navbar-nav li{
+        padding-right: 2em;
+    }
+    .headerWrap ul.navbar-nav li.active{
+         background-color: rgba(43,130,218,0.6);
+         border-radius: 5px;
+    }
+    .headerWrap a.showUl i {
+        color: rgba(255,255,255,0.3);
+    }
+
+}
+
+/****************************************for large screen ************************************************/
+@media all and (min-width: 1020px){
+ 
+
+ }
+ 

@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-11-10 15:15:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2017-11-16 16:37:51
+* @Last Modified time: 2017-11-20 19:42:32
 */
 body,html{
   background-color: #fff;
@@ -165,7 +165,7 @@ body * {
   display: inline-block;
   width: 50%;
   border: none;
-  text-shadow: 1px 1px 1px #01080f;
+/*  text-shadow: 1px 1px 1px #01080f; */
  }
  .tranListPg .mobile .state>div {
     height: 2.5em;
@@ -177,6 +177,7 @@ body * {
    .tranListPg .mobile .state div:first-child{
         background-color:rgb(200,231,234);
         font-size: 2em;
+        color: #fff!important;
    }
     .tranListPg .mobile .state div:last-child .count{
       font-size: 1.5em;
@@ -275,4 +276,170 @@ body * {
     .tranListPg th:last-child {
       width: 10em;
     }
+ }/*
+* @Author: Administrator
+* @Date:   2017-09-03 09:03:10
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-18 19:57:02
+*/
+
+
+/************************************common css****************************************************/
+
+.headerWrap .navbar{
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.headerWrap nav.navbar{
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.headerWrap nav.navbar a.navbar-brand, .headerWrap .bar{
+    display: inline-block;
+    vertical-align: middle;
+    height: 67px;
+    line-height: 67px;
+}
+ .headerWrap nav.navbar .bar{
+    float: right;
  }
+.headerWrap nav.navbar a{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.headerWrap .bar.mobile{
+    position: relative;
+}
+.headerWrap .bar.mobile>div.user {
+    position: absolute;
+    color: #999;
+    right: 2em;
+    top: 0.5em;
+}
+
+
+/****************************************for tablet ************************************************/
+ @media all and (max-width: 800px){
+    .headerWrap .navbar{
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+ }
+
+/****************************************for PC ************************************************/
+@media all {
+      .headerWrap nav.navbar .bar.mobile{
+        display: none;
+      }    
+    .headerWrap .bar.pc ul.navbar-nav,.headerWrap .bar.pc ul.navbar-nav li {
+        display: inline-block!important;
+    }
+    .headerWrap>nav.navbar>a.navbar-brand>img{
+         height: 46px;
+        display: inline-block;
+    }
+    .headerWrap .bar.pc a.nav-link {
+        font-size: 1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        color: rgb(47, 146, 169);
+     }
+     .headerWrap .bar.pc a.nav-link.nickName{
+        font-size: 0.8em;
+        color: rgba(0,0,0,0.3);
+     }
+
+     /*********udnerline animation effect***************/
+      .headerWrap .bar.pc a.nav-link.jsTranMg, .headerWrap .bar.pc a.nav-link.jsLogout{
+     /*  -webkit-transition: all 1s; 
+        transition: all 1s; */
+        position: relative;
+      }
+      .headerWrap .bar.pc a.nav-link.jsTranMg:after, .headerWrap .bar.pc a.nav-link.jsLogout:after {
+        content: '';
+          position: absolute;
+          left: 0;
+          bottom: -0.3em;
+          display: inline-block;
+          height: 1em;
+          width: 100%;
+          border-bottom: 1px solid;
+          margin-top: 10px;
+          opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: scale(0,1);
+            transform: scale(0,1);
+    }
+
+    .headerWrap .bar.pc a.nav-link.jsTranMg:hover:after, .headerWrap .bar.pc a.nav-link.jsLogout:hover:after{
+  /*      color: #feffff;
+        text-shadow: 1px 1px 1px black; */
+          opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    .headerWrap .nav-link{
+        display: inline;
+    }
+    .headerWrap .bar.pc li.nav-item.active {
+        background-color: none;
+        text-align: center;
+    }
+}
+
+ 
+/****************************************for mobile ************************************************/
+ @media all and (max-width: 500px){
+  .headerWrap nav.navbar .bar.pc{
+        display: none;
+    }
+     .headerWrap nav.navbar .bar.mobile ul.navbar-nav{
+       display: none;
+    }
+  .headerWrap .bar.mobile>a>i.fa.fa-bars{
+        font-size: 26px;
+         vertical-align: middle;
+        vertical-align: -webkit-baseline-middle;
+    }
+    .headerWrap nav.navbar .bar.mobile{
+        display: inline-block;
+    }
+    .headerWrap .navbar{
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .headerWrap .bar.mobile ul li{
+        line-height: 40px;
+    }
+    .headerWrap ul.navbar-nav {
+        position: absolute;
+        width: 7em;
+        right: -5px;
+        text-align: right;
+        border-radius: 5px;
+    }
+    .headerWrap ul.navbar-nav li{
+        padding-right: 2em;
+    }
+    .headerWrap ul.navbar-nav li.active{
+         background-color: rgba(43,130,218,0.6);
+         border-radius: 5px;
+    }
+    .headerWrap a.showUl i {
+        color: rgba(255,255,255,0.3);
+    }
+
+}
+
+/****************************************for large screen ************************************************/
+@media all and (min-width: 1020px){
+ 
+
+ }
+ 

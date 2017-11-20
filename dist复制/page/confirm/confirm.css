@@ -1,0 +1,165 @@
+/*
+* @Author: Administrator
+* @Date:   2017-11-10 15:15:58
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-16 14:11:59
+*/
+html,body{
+	background-color: #fff;
+}
+
+.headerWrap nav.navbar {
+    position: relative;
+    width: 100%;
+}
+.headerWrap a{
+	color: rgba(0,0,0,0.3);
+}
+.headerWrap a>i.fa.fa-bars {
+    color: rgba(0,0,0,0.3);
+}
+.headerWrap .bar.pc li.nav-item.active a{
+    color: #fff;
+}
+.headerWrap a.showUl>i.fa.fa-bars {
+    color: rgba(0,0,0,0.1);
+}
+.headerWrap nav.navbar.navbar-expand-sm.bg-dark.navbar-dark.fixed-top {
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fff;
+}
+
+
+
+  /**********confirm pg*********************/
+  .confirmPg{
+  	padding-top: 70px;
+  }
+
+  .confirmPg .QRcode{
+  	background-color: #fff;
+	border: 1px solid rgba(0,0,0,0.1);
+  	border-radius: 5px;
+  	width: 80%;
+  	max-width: 300px;
+  	margin: 20px auto;
+  }
+   .confirmPg .QRcode>.QRwrap{
+   	width: 80%;
+   	margin: 3em auto;
+
+   }
+  .confirmPg .QRImg>img{
+	width: 100%;
+  }
+  .confirmPg .QRcode>.QRwrap .mount,.confirmPg .QRcode>.QRwrap .desc{
+  	text-align: center;
+  	font-weight: 800;
+  }
+  .confirmPg .QRcode>.QRwrap .mount{
+  	font-size: 2em;
+  	padding-top: 1em;
+  }
+  .confirmPg .QRcode>.QRwrap .desc{
+  	font-size: 1.1em;
+  	padding-bottom: 1em;
+  }
+  .confirmPg .notice>div>p{
+    display: inline-block;
+  }
+    .confirmPg .notice>div>p:nth-child(3){
+       display: block;
+	   border-bottom: 2px solid #2f92a9;
+	   max-width: 31.5em;
+  }
+  .confirmPg .payAct{
+  	text-align: center;
+  }
+  .confirmPg .payAct p{
+  	display: inline-block;
+  	padding-right: 2em;
+  }
+  .confirmPg input#copyTarget {
+    border: none;
+}
+.confirmPg input#copyTarget {
+    width: 14em;
+} 
+
+/****button**/
+.confirmPg button#copyButton~span{
+  position: relative;
+  display: none;
+}
+.confirmPg button#copyButton~span:before{
+    content: '\5DF2\590D\5236\FF01';
+    background-color: #f7e2e2;
+    border: 1px solid #dbd6d6;
+    padding: 0.5em;
+    position: absolute;
+    top: -3em;
+    left: -6em;
+    border-radius: 5px;
+    color: #444;
+}
+.confirmPg input#copyTarget::selection{
+    background-color: #41b9d5;
+}
+.confirmPg input#copyTarget::-moz-selection{
+      background-color: #41b9d5;
+}
+
+
+/****************************************for mobile ************************************************/
+ @media all and (max-width: 500px){
+  /**********headerWrap*********************/
+  .headerWrap ul.navbar-nav{
+    background-color: rgb(47, 146, 169);;
+  }
+  .headerWrap ul.navbar-nav a{
+    color: #fff;
+  }
+  .headerWrap ul.navbar-nav li.active{
+     background-color: rgb(43,130,218);
+  }
+    .confirmPg {
+      font-size: 0.8em;
+      padding-top: 14px;
+    }
+    .confirmPg .QRcode>.QRwrap {
+    margin: 1em auto;
+  }
+  .confirmPg .QRcode>.QRwrap .mount {
+    font-size: 1.5em;
+    padding-top: 0em;
+  }
+  .confirmPg input#copyTarget {
+    display: block;
+    width: 100%;
+  }
+
+  .confirmPg .payAct p{
+    width: 80%;
+  }
+  .confirmPg button#copyButton~span:before{
+    display: none!important;
+  }
+}
+
+ /****************************************for small mobile screen ************************************************/
+@media all and (max-width: 360px){
+    .confirmPg .notice>div>p:nth-child(3) {
+	    display: block;
+	    border-bottom: 2px solid #2f92a9;
+	    max-width: 20em;
+	}
+  .confirmPg>.notice>div>p>span{
+    color: rgb(237,34,36);
+  }
+  .confirmPg .QRcode>.QRwrap {
+    width: 69%;
+  }
+  .confirmPg p{
+    margin: 0em;
+  }
+ }
